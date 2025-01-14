@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Museum of SVG Objects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fdfdfd;
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+      height: 100vh;
+      perspective: 1px;
+      transform-style: preserve-3d;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #e0e0e0;
+      background-color: #ffffff;
+      z-index: 2; /* Ensure header is on top */
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      letter-spacing: 1px;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #777;
+      margin: 0.5rem 0 0;
+    }
+
+    /* Description Section */
+    .description {
+      text-align: center;
+      padding: 2rem 3rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-top: 50px;
+      max-width: 900px; /* Increased width */
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #ffffff; /* Same background as header */
+      position: relative; /* Required for the pseudo-element */
+      z-index: 3; /* Ensure description is on top */
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Adding the line using a pseudo-element */
+    .description::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -50px; /* Adjust the line's position to extend beyond the description */
+      width: calc(100% + 100px); /* Make the line longer than the description */
+      height: 2px; /* Line thickness */
+      background-color: #e0e0e0; /* Line color */
+    }
+
+    /* Parallax elements */
+    #triangle1, #square1, #hexagon2, #square2, #circle3, #star3, #square4 {
+      position: absolute;
+      z-index: 1; /* Ensure parallax elements stay behind the content */
+    }
+
+    #triangle1 {
+      width: 0;
+      height: 0;
+      border-left: calc( 3vw + 3vh ) solid transparent;
+      border-right: calc( 3vw + 3vh ) solid transparent;
+      border-bottom: calc( 6vw + 6vh ) solid #ffc107;
+      top: 80vh; left: 20%; /* Position below the description */
+      opacity: 60%;
+    }
+
+    #square1 {
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 90vh; left: 15%; /* Position below the description */
+      background-color: #1b96cf;
+    }
+
+    #hexagon2 {
+      width: calc( 6vw + 6vh );
+      height: calc( 6vw + 6vh );
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+      top: 80vh; left: 65%; /* Position below the description */
+      background-color: #1b96cf;
+      opacity: 60%;
+    }
+
+    #square2 {
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 40vh; left: 70%; /* Position below the description */
+      background-color: #7153eb;
+    }
+
+    #circle3 {
+      width: calc( 6vw + 6vh );
+      height: calc( 6vw + 6vh );
+      border-radius: calc( 3vw + 3vh );
+      bottom: 5vh; left: 45%; /* Position below the description */
+      background-color: #7153eb;
+      opacity: 60%;
+    }
+
+    #star3 {
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 60vh; left: 40%; /* Position below the description */
+      background-color: #ff338b;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+    }
+
+    #square4 {
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 120vh; left: 40%; /* Position below the description */
+      background-color: #7153eb;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      position: absolute;
+      top: 200vh;
+      width: 100%;
+      z-index: 2; /* Ensure footer stays on top */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Virtual Museum of SVG Objects</h1>
+    <p>Exploring the beauty of scalable vector graphics</p>
+  </header>
+
+  <!-- Description Section -->
+  <div class="description">
+    <h2>What Are SVG Objects?</h2>
+    <p>
+      SVG (Scalable Vector Graphics) are XML-based vector images used to define two-dimensional graphics in web design. 
+      Unlike raster images, SVGs are resolution-independent, meaning they look crisp at any size or resolution. 
+      They can be used to create intricate shapes, designs, and animations that scale across devices without losing quality.
+    </p>
+    <p>
+      In this part of the virtual museum, you’ll experience the beauty of SVGs with dynamic parallax effects that give the images depth and movement.
+    </p>
+  </div>
+
+  <!-- Parallax Elements -->
+  <div id="triangle1"></div>
+  <div id="square1"></div>
+  <div id="hexagon2"></div>
+  <div id="square2"></div>
+  <div id="circle3"></div>
+  <div id="star3"></div>
+  <div id="square4"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Virtual Museum of SVG Art | Designed by Valentina Lafchieva</p>
+  </footer>
+
+  <script>
+    // Function to handle the parallax effect
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+
+      // Apply parallax effect by changing the transform property based on scroll position
+      document.getElementById('triangle1').style.transform = `translateY(${scrollPosition * 0.3}px)`;
+      document.getElementById('square1').style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      document.getElementById('hexagon2').style.transform = `translateY(${scrollPosition * 0.4}px)`;
+      document.getElementById('square2').style.transform = `translateY(${scrollPosition * 0.6}px)`;
+      document.getElementById('circle3').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+      document.getElementById('star3').style.transform = `translateY(${scrollPosition * 0.7}px)`;
+      document.getElementById('square4').style.transform = `translateY(${scrollPosition * 0.1}px)`;
+    });
+  </script>
+</body>
+</html>
+

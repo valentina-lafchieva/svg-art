@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Museum of SVG Objects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fdfdfd;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #e0e0e0;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      letter-spacing: 1px;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #777;
+      margin: 0.5rem 0 0;
+    }
+
+    /* Description Section */
+    .description {
+      text-align: center;
+      padding: 2rem 3rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-top: 50px;
+      max-width: 900px; /* Increased width */
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #ffffff; /* Same background as header */
+      position: relative; /* Required for the pseudo-element */
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Adding the line using a pseudo-element */
+    .description::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -50px; /* Adjust the line's position to extend beyond the description */
+      width: calc(100% + 100px); /* Make the line longer than the description */
+      height: 2px; /* Line thickness */
+      background-color: #e0e0e0; /* Line color */
+    }
+
+    #parallax {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+      perspective: 1px;
+      transform-style: preserve-3d;
+      scroll-behavior: smooth;
+    }
+
+    #parallax > div {
+      position: absolute;
+    }
+
+    #square1 {
+      transform: translateZ(0px) scale(1.5);
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 75vh; left: 15%;
+      background-color: #1b96cf;
+    }
+
+    #triangle1 {
+      transform: translateZ(-1px) scale(2.5);
+      width: 0;
+      height: 0;
+      border-left: calc( 3vw + 3vh ) solid transparent;
+      border-right: calc( 3vw + 3vh ) solid transparent;
+      border-bottom: calc( 6vw + 6vh ) solid #ffc107;
+      top: 50vh; left: 0%;
+      opacity: 60%;
+    }
+
+    #square2 {
+      transform: translateZ(0px) scale(1.5);
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 20vh; left: 70%;
+      background-color: #7153eb;
+    }
+
+    #hexagon2 {
+      transform: translateZ(-1px) scale(2.5);
+      width: calc( 6vw + 6vh );
+      height: calc( 6vw + 6vh );
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+      top: 15vh; left: 80%;
+      background-color: #1b96cf;
+      opacity: 60%;
+    }
+
+    #star3 {
+      transform: translateZ(0px) scale(1.5);
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 60vh; left: 40%;
+      background-color: #ff338b;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+    }
+
+    #square4 {
+      transform: translateZ(0px) scale(1.5);
+      width: calc( 5vw + 5vh );
+      height: calc( 5vw + 5vh );
+      top: 20vh; left: 70%;
+      background-color: #7153eb;
+    }
+
+    #circle3 {
+      transform: translateZ(-1px) scale(2.5);
+      width: calc( 6vw + 6vh );
+      height: calc( 6vw + 6vh );
+      border-radius: calc( 3vw + 3vh );
+      bottom: 5vh; left: 45%;
+      background-color: #7153eb;
+      opacity: 60%;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      position: absolute;
+      top: 200vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Virtual Museum of SVG Objects</h1>
+    <p>Exploring the beauty of scalable vector graphics</p>
+  </header>
+
+  <!-- Description Section -->
+  <div class="description">
+    <h2>What Are SVG Objects?</h2>
+    <p>
+      SVG (Scalable Vector Graphics) are XML-based vector images used to define two-dimensional graphics in web design. 
+      Unlike raster images, SVGs are resolution-independent, meaning they look crisp at any size or resolution. 
+      They can be used to create intricate shapes, designs, and animations that scale across devices without losing quality.
+    </p>
+    <p>
+      In this part of the virtual museum, you’ll experience the beauty of SVGs with dynamic parallax effects that give the images depth and movement.
+    </p>
+  </div>
+
+  <div id="parallax">
+    <footer>
+      <p>© 2024 Virtual Museum of SVG Art | Designed by Valentina Lafchieva</p>
+    </footer>
+    <div id="triangle1"></div>
+    <div id="square1"></div>
+    <div id="hexagon2"></div>
+    <div id="square2"></div>
+    <div id="circle3"></div>
+    <div id="star3"></div>
+    <div id="square4"></div>
+  </div>
+
+  <script>
+  </script>
+</body>
+</html>
