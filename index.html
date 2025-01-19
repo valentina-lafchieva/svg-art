@@ -6,39 +6,711 @@
   <title>Virtual Museum of SVG Art</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
+    html {font-size: calc( 1vw + 1vh);}
     body {
       margin: 0;
       padding: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #fdfdfd;
+      background-color: #ffffff;
       color: #333;
-    }
 
+    }
+    section {z-index: 10; background-color: white;}
     header {
-      padding: 2rem 1rem;
+      padding: 4rem;
       text-align: center;
       border-bottom: 2px solid #e0e0e0;
       background-color: #ffffff;
+      z-index: 10
+      
     }
 
     h1 {
-      font-size: 3.5rem;
+      padding: 2rem;
+      text-align: center;
+      font-size: 2.5rem;
       margin: 0;
       letter-spacing: 1px;
       color: #444;
+      z-index: 10;
+      background-color: #ffffff;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 0.75rem;
       color: #777;
       margin: 0.5rem 0 0;
+      z-index: 10;
+      background-color: #ffffff;
     }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #003975;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 0rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+        /* Footer Styling */
+        footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 640h;
+      width: 100%;
+    }
+
+
+    footer p {
+        margin: 0; /* Remove any default margin from the <p> tag */
+        background: transparent;
+        color: inherit;
+    }
+
   </style>
 </head>
 <body>
+  <!-- Main Header -->
   <header>
     <h1>Virtual Museum of SVG Art</h1>
     <p>Exploring the beauty of scalable vector graphics</p>
   </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#SVG_Objects">SVG Objects</a>
+    <a href="#SVG_Logos">SVG Logos</a>
+    <a href="#SVG_Artworks">SVG Artworks</a>
+  </nav>
+
+  <!-- Section 1 -->
+  <section id="SVG_Objects">
+      <h1>SVG Objects</h1>
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #fdfdfd;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            height: 100vh;
+            perspective: 1px;
+            transform-style: preserve-3d;
+            scroll-behavior: smooth;
+          }
+      
+          /* Description Section */
+          .description {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.75rem;
+            line-height: 1.8;
+            color: #444;
+            margin-top: 0px;
+            max-width: 900px; /* Increased width */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff; /* Same background as header */
+            position: relative; /* Required for the pseudo-element */
+            z-index: 3; /* Ensure description is on top */
+          }
+      
+          .description h2 {
+            padding: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 1rem;
+          }
+      
+          .description p {
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+          }
+      
+          .description p:last-child {
+            margin-bottom: 0;
+          }
+      
+          /* Adding the line using a pseudo-element */
+          .description::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -50px;
+            width: calc(100% + 100px);
+            height: 2px;
+            background-color: #e0e0e0;
+          }
+      
+          /* Parallax elements */
+          #triangle1, #square1, #hexagon2, #square2, #circle3, #star3, #square4 {
+            position: absolute;
+            z-index: 1; /* Ensure parallax elements stay behind the content */
+          }
+      
+          #triangle1 {
+            width: 0;
+            height: 0;
+            border-left: calc( 3vw + 3vh ) solid transparent;
+            border-right: calc( 3vw + 3vh ) solid transparent;
+            border-bottom: calc( 6vw + 6vh ) solid #ffc107;
+            top: 80vh; left: 22%; /* Position below the description */
+            opacity: 60%;
+          }
+      
+          #square1 {
+            width: calc( 5vw + 5vh );
+            height: calc( 5vw + 5vh );
+            top: 90vh; left: 25%; /* Position below the description */
+            background-color: #1b96cf;
+          }
+      
+          #hexagon2 {
+            width: calc( 6vw + 6vh );
+            height: calc( 6vw + 6vh );
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+            top: 80vh; left: 65%; /* Position below the description */
+            background-color: #1b96cf;
+            opacity: 60%;
+          }
+      
+          #square2 {
+            width: calc( 5vw + 5vh );
+            height: calc( 5vw + 5vh );
+            top: 90vh; left: 70%; /* Position below the description */
+            background-color: #7153eb;
+          }
+      
+          #circle3 {
+            width: calc( 6vw + 6vh );
+            height: calc( 6vw + 6vh );
+            border-radius: calc( 3vw + 3vh );
+            top: 90vh; left: 50%; /* Position below the description */
+            background-color: #7153eb;
+            opacity: 60%;
+          }
+      
+          #star3 {
+            width: calc( 5vw + 5vh );
+            height: calc( 5vw + 5vh );
+            top: 90vh; left: 40%; /* Position below the description */
+            background-color: #ff338b;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          }
+      
+          #square4 {
+            width: calc( 5vw + 5vh );
+            height: calc( 5vw + 5vh );
+            top: 120vh; left: 40%; /* Position below the description */
+            background-color: #7153eb;
+          }
+
+          /* Blank White Section */
+          .blank-section {
+            background-color: #ffffff;
+            height: 400px; /* Adjust the height as needed */
+            width: 100%;
+          }
+
+        </style>
+      </head>
+      <body>
+      
+        <!-- Description Section -->
+        <div class="description">
+          <h2>What Are SVG Objects?</h2>
+          <p>
+            SVG (Scalable Vector Graphics) are XML-based vector images used to define two-dimensional graphics in web design. 
+            Unlike raster images, SVGs are resolution-independent, meaning they look crisp at any size or resolution. 
+            They can be used to create intricate shapes, designs, and animations that scale across devices without losing quality.
+          </p>
+          <p>
+            In this part of the virtual museum, you’ll experience the beauty of SVGs with dynamic parallax effects that give the images depth and movement.
+          </p>
+        </div>
+      
+        <!-- Parallax Elements -->
+        <div id="triangle1"></div>
+        <div id="square1"></div>
+        <div id="hexagon2"></div>
+        <div id="square2"></div>
+        <div id="circle3"></div>
+        <div id="star3"></div>
+        <div id="square4"></div>
+
+        <!-- Blank White Section -->
+        <div class="blank-section"></div>
+      
+      
+        <script>
+          // Function to handle the parallax effect
+          window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+      
+            // Apply parallax effect by changing the transform property based on scroll position
+            document.getElementById('triangle1').style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            document.getElementById('square1').style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            document.getElementById('hexagon2').style.transform = `translateY(${scrollPosition * 0.4}px)`;
+            document.getElementById('square2').style.transform = `translateY(${scrollPosition * 0.6}px)`;
+            document.getElementById('circle3').style.transform = `translateY(${scrollPosition * 0.7}px)`;
+            document.getElementById('star3').style.transform = `translateY(${scrollPosition * 0.6}px)`;
+            document.getElementById('square4').style.transform = `translateY(${scrollPosition * 0.1}px)`;
+          });
+        </script>
+  </section>
+
+<!-- Section 2 -->
+<section id="SVG_Logos">
+  <h1>SVG Logos</h1>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      /* Body Styling */
+      body {
+        font-family: 'Playfair Display', serif;
+        background-color: #fdfdfd;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+       
+      /* Content Section Styling */
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+  
+      .logo-section {
+        order: -1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      .logo-item {
+        width: 180px;
+        height: 180px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .logo-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+  
+      .logo-item img {
+        width: 90%;
+        height: auto;
+        cursor: pointer;
+      }
+  
+      .logo-description {
+        order: -1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 0 1rem;
+      }
+  
+      .logo-description h2 {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 0.5rem;
+      }
+  
+      .logo-description p {
+        font-size: 0.75rem;
+        color: #555;
+        line-height: 1.6;
+        text-align: justify;
+        margin-bottom: 1rem;
+      }
+
+    </style>
+  </head>
+  <body>
+  
+  <!-- Content Section -->
+  <section class="content">
+    <!-- Intro Section -->
+    <div class="logo-section">
+      <div class="art-description">
+        <h2>What is the meaning of SVG Logos?</h2>
+        <p>
+          SVG logos are digital graphics created using mathematical equations and geometric shapes, allowing them to scale infinitely without losing quality. Unlike JPEG or PNG, they are lightweight, support transparency, and can be easily animated or styled with CSS, making them perfect for responsive web design and modern branding.      </p>
+      </div>
+    </div>
+  
+    <!-- Logo 1 -->
+    <div class="logo-section">
+      <a href="https://www.fh-potsdam.de/" target="_blank" class="logo-item" title="FHP Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FHP_logo.svg" alt="FHP Logo">
+      </a>
+      <div class="logo-description">
+        <h2>FHP Logo</h2>
+        <p>
+          The logo of Fachhochschule Potsdam (FHP) is a clean, minimalist design featuring bold letters. Its simplicity reflects the university's focus on innovation and clarity, making it an excellent example of SVG usage in modern branding.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Logo 2 -->
+    <div class="logo-section">
+      <a href="https://www.apple.com" target="_blank" class="logo-item" title="Apple Logo">
+        <!-- Apple Logo SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="black" width="100" height="100">
+          <path d="M808.4 534.4c-4.6-110.8 90.4-163.8 94.6-166.2-51.8-75.8-132.6-86.2-161.2-87.4-68.4-6.8-133.8 40.4-168.4 40.4-34.8 0-87.8-39.4-144-38.4-74.2 1-142.6 43.2-180.6 109.8-77 133.4-19.6 331.4 55.4 440.2 36.8 53.2 80.4 112.8 137 110.6 55.4-2.2 76.4-35.8 143.2-35.8s85.2 35.8 144 34.8c58.4-1 95.4-54.2 131.6-107.6 41.4-60.4 58.4-118.8 59.4-121.8-1.4-0.6-113.8-43.8-115.4-173zM688.2 158.2c30.6-37.4 51.4-89.6 45.8-141.2-44.4 1.8-98.4 29.6-130.6 67.4-28.6 33-54 85.8-47 136 49.8 3.8 100.8-25 131.8-62.2z"/>
+        </svg>      
+      </a>
+      <div class="logo-description">
+        <h2>Apple Logo</h2>
+        <p>
+          The iconic Apple logo is a symbol of simplicity and elegance. Its clean, recognizable design highlights the brand's commitment to user-friendly, innovative technology. This SVG version ensures sharpness and scalability across digital platforms.
+        </p>
+      </div>
+    </div>
+  
+  
+    <!-- Logo 3 -->
+    <div class="logo-section">
+      <a href="https://www.github.com" target="_blank" class="logo-item" title="GitHub Logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.66-.22.66-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.52 9.52 0 0 1 12 6.8c.85.004 1.71.115 2.51.337.91-.75 2.05-1.337 3.3-1.337.55 1.37.21 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.16.58.68.49A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>
+        </svg>
+      </a>
+      <div class="logo-description">
+        <h2>GitHub Logo</h2>
+        <p>
+          Representing the open-source community, the GitHub logo features the "Octocat," a playful and unique design. This SVG version ensures adaptability for various platforms, reflecting the flexibility and creativity of the GitHub ecosystem.
+        </p>
+      </div>
+    </div>
+</section>
+
+  <!-- Section 3 -->
+  <section id="SVG_Artworks">
+      <h1>SVG Artworks</h1>
+      <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        /* Content Section Styling */
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+          padding: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+    
+        .art-section {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 2rem;
+          width: 100%;
+          max-width: 1200px;
+          padding: 1rem;
+          border-bottom: 1px solid #ddd;
+        }
+    
+        .art-item {
+          width: 180px;
+          height: 180px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #fff;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .art-item:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+    
+        .art-item img {
+          width: 90%;
+          height: auto;
+          cursor: pointer;
+        }
+    
+        .art-description {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          max-width: 100%;
+          padding: 0 1rem;
+        }
+    
+        .art-description h2 {
+          font-size: 1rem;
+          color: #444;
+          margin-bottom: 0.5rem;
+        }
+    
+        .art-description p {
+          font-size: 0.75rem;
+          color: #555;
+          line-height: 1.6;
+          text-align: justify;
+          margin-bottom: 1rem;
+        }
+    
+        /* Fullscreen Modal Styling */
+        .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        cursor: default;
+        transition: transform 0.3s ease;
+      }
+    
+        .modal.active {
+          display: flex;
+        }
+      </style>
+    </head>
+    <body>
+    
+    <!-- Content Section -->
+    <section class="content">
+      <!-- Intro Section -->
+      <div class="art-section">
+        <a href="https://www.w3.org/TR/SVG2/" target="_blank" class="art-item" title="What is SVG Art?">
+          <img src="svg-file-icon.svg" alt="What is SVG Art?">
+        </a>
+        <div class="art-description">
+          <h2>What is SVG Art?</h2>
+          <p>
+            SVG (Scalable Vector Graphics) is a web standard for creating resolution-independent graphics. 
+            Unlike raster images, SVGs use mathematical paths to define shapes, lines, and colors, making them 
+            perfect for high-quality visuals that look sharp at any size. Tools like Adobe Illustrator, Inkscape, 
+            and Figma allow artists to create SVG art effortlessly. Whether it’s logos, illustrations, or animations, 
+            SVGs are a cornerstone of modern web design and digital art.
+          </p>
+        </div>
+      </div>
+    
+      <!-- Artwork 1 -->
+      <div class="art-section">
+        <div class="art-item" title="Bird Illustration">
+          <img src="bird.svg" alt="Bird Illustration" class="clickable-image">
+        </div>
+        <div class="art-description">
+          <h2>Bird Illustration</h2>
+          <p>
+    
+              This SVG represents a stylized bird with intricate geometric shapes and a mix of vibrant colors. The bird's body is formed by various polygons and circles, with shades of orange, blue, and pink, creating a dynamic and modern appearance. The design features a combination of overlapping elements and gradients that give the bird a sense of depth and movement, making it both visually striking and abstract. The bird appears to be in flight, with its wings spread wide, suggesting freedom and energy.
+          </p>
+        </div>
+      </div>
+    
+      <!-- Artwork 2 -->
+      <div class="art-section">
+        <div class="art-item" title="Moon and Clouds">
+          <img src="moon.svg" alt="Moon and Clouds" class="clickable-image">
+        </div>
+        <div class="art-description">
+          <h2>Moon and Clouds Illustration</h2>
+          <p>
+              This SVG features a minimalist design of a moon surrounded by soft, flowing clouds, all created with clean, simple line work. The moon is depicted as a crescent, with delicate curves that highlight its gentle shape. The clouds are drawn with smooth, rounded lines, adding a sense of calm and serenity to the composition. The overall design is light and airy, emphasizing simplicity and elegance, making it a perfect choice for a subtle, yet captivating visual.
+          </p>
+        </div>
+      </div>
+    
+      <!-- Artwork 3 -->
+      <div class="art-section">
+        <div class="art-item" title="Fox Illustration">
+          <img src="fox.svg" alt="Fox Illustration" class="clickable-image">
+        </div>
+        <div class="art-description">
+          <h2>Fox Illustration</h2>
+          <p>
+              This SVG showcases a minimalistic line work illustration of a fox, characterized by clean, simple lines that form the fox's sleek body and expressive face. The design emphasizes the elegant curves of the fox's tail and the subtle details of its features, such as the pointed ears and sharp eyes. The overall aesthetic is modern and refined, with an emphasis on simplicity, making it a versatile and charming design suitable for various creative projects.
+          </p>
+        </div>
+      </div>
+    
+      <!-- Artwork 4 -->
+      <div class="art-section">
+        <div class="art-item" title="Mountain Landscape">
+          <img src="mountain.svg" alt="Mountain Landscape" class="clickable-image">
+        </div>
+        <div class="art-description">
+          <h2>Mountain Landscape Illustration</h2>
+          <p>
+            
+              This SVG features a breathtaking mountain landscape, meticulously crafted with vector paths to create a stunning, scalable design. The illustration captures the majestic peaks, rolling hills, and serene atmosphere of the mountains, with clean lines and subtle details that evoke a sense of tranquility and awe. Its resolution-independent nature ensures that the artwork maintains its clarity and beauty, making it an ideal choice for both web and print applications, from posters to digital platforms.
+          </p>
+        </div>
+      </div>
+    
+      <!-- Artwork 5 -->
+      <div class="art-section">
+        <div class="art-item" title="Skull Design">
+          <img src="skull.svg" alt="Skull Design" class="clickable-image">
+        </div>
+        <div class="art-description">
+          <h2>Skull Illustration</h2>
+          <p>
+              This colorful skull SVG presents a funky and surreal design, featuring a skull that appears cut open, with vibrant tongues and eyes spilling out in a chaotic yet captivating way. The bold colors and unconventional elements highlight the versatility of SVGs in creating detailed and expressive illustrations. This artwork pushes the boundaries of traditional design, showcasing how SVGs can be used to craft unique, visually striking compositions with a playful, edgy aesthetic. Perfect for those seeking to add a bold, creative touch to their projects.
+          </p>
+        </div>
+      </div>
+    </section>
+      </section>
+    
+      <!-- Fullscreen Modal -->
+      <div class="modal" id="modal">
+        <img src="" alt="Full Screen Image" id="modal-image">
+      </div>
+    
+    
+      <script>
+        // Get all clickable images
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+    
+
+        clickableImages.forEach(image => {
+    image.addEventListener('click', function(event) {
+      // Set the modal image source
+      modalImage.src = event.target.src;
+
+      // Show the modal by adding the 'active' class
+      modal.classList.add('active');
+
+      // Get the current scroll position
+      const scrollPosition = window.scrollY;
+
+      // Set the modal to appear at the current scroll position
+      modal.style.top = `${scrollPosition}px`;
+    });
+  });
+    
+        // Close the modal when clicked
+        modal.addEventListener('click', () => {
+          modal.classList.remove('active');
+        });
+    
+        // Zoom functionality for the modal image
+        let scale = 1;
+        modalImage.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          if (e.deltaY < 0) {
+            scale += 0.1; // Zoom in
+          } else {
+            scale -= 0.1; // Zoom out
+          }
+          scale = Math.max(1, Math.min(scale, 5)); // Limit zoom level between 1 and 3
+          modalImage.style.transform = `scale(${scale})`;
+
+                clickableImages.forEach(image => {
+        image.addEventListener('click', () => {
+          modalImage.src = image.src;
+          modal.classList.add('active');
+          document.body.classList.add('modal-open');
+        });
+      });
+
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      });
+        });
+        
+</script> 
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Virtual Museum of SVG Art | Designed by Valentina Lafchieva</p>
+  </footer>
+
+  <script>
+
+  </script>
 </body>
 </html>

@@ -70,16 +70,25 @@
       border-bottom: 2px solid #e0e0e0;
     }
 
-    /* Footer styling */
-    footer {
-    text-align: center;
-    padding: 1rem;
-    background: #333;
-    color: white;
-    position: absolute;
-    top: 950vh;
-    width: 100%;
+        /* Footer Styling */
+        footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 640h;
+      width: 100%;
     }
+
+
+footer p {
+    margin: 0; /* Remove any default margin from the <p> tag */
+    background: transparent; /* Ensure no background is applied to the <p> */
+    color: inherit; /* Inherit the text color from the footer */
+}
+
   </style>
 </head>
 <body>
@@ -94,7 +103,6 @@
     <a href="#SVG_Objects">SVG Objects</a>
     <a href="#SVG_Logos">SVG Logos</a>
     <a href="#SVG_Artworks">SVG Artworks</a>
-    <a href="#Try_It_Yourself!">Try It Yourself!</a>
   </nav>
 
   <!-- Section 1 -->
@@ -278,159 +286,159 @@
         </script>
   </section>
 
-  <!-- Section 2 -->
-  <section id="SVG_Logos">
-      <h1>SVG Logos</h1>
-        <style>
-          /* General Reset */
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-      
-          /* Body Styling */
-          body {
-            font-family: 'Playfair Display', serif;
-            background-color: #fdfdfd;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-          }
-           
-          /* Content Section Styling */
-          .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-          }
-      
-          .logo-section {
-            order: -1;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 2rem;
-            width: 100%;
-            max-width: 1200px;
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-          }
-      
-          .logo-item {
-            width: 180px;
-            height: 180px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-      
-          .logo-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-          }
-      
-          .logo-item img {
-            width: 90%;
-            height: auto;
-            cursor: pointer;
-          }
-      
-          .logo-description {
-            order: -1;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            max-width: 100%;
-            padding: 0 1rem;
-          }
-      
-          .logo-description h2 {
-            font-size: 1rem;
-            color: #444;
-            margin-bottom: 0.5rem;
-          }
-      
-          .logo-description p {
-            font-size: 0.75rem;
-            color: #555;
-            line-height: 1.6;
-            text-align: justify;
-            margin-bottom: 1rem;
-          }
+<!-- Section 2 -->
+<section id="SVG_Logos">
+  <h1>SVG Logos</h1>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      /* Body Styling */
+      body {
+        font-family: 'Playfair Display', serif;
+        background-color: #fdfdfd;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+       
+      /* Content Section Styling */
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+  
+      .logo-section {
+        order: -1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      .logo-item {
+        width: 180px;
+        height: 180px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .logo-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+  
+      .logo-item img {
+        width: 90%;
+        height: auto;
+        cursor: pointer;
+      }
+  
+      .logo-description {
+        order: -1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 0 1rem;
+      }
+  
+      .logo-description h2 {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 0.5rem;
+      }
+  
+      .logo-description p {
+        font-size: 0.75rem;
+        color: #555;
+        line-height: 1.6;
+        text-align: justify;
+        margin-bottom: 1rem;
+      }
 
-        </style>
-      </head>
-      <body>
-      
-      <!-- Content Section -->
-      <section class="content">
-        <!-- Intro Section -->
-        <div class="logo-section">
-          <div class="art-description">
-            <h2>What is the meaning of SVG Logos?</h2>
-            <p>
-              SVG logos are digital graphics created using mathematical equations and geometric shapes, allowing them to scale infinitely without losing quality. Unlike JPEG or PNG, they are lightweight, support transparency, and can be easily animated or styled with CSS, making them perfect for responsive web design and modern branding.      </p>
-          </div>
-        </div>
-      
-        <!-- Logo 1 -->
-        <div class="logo-section">
-          <a href="https://www.fh-potsdam.de/" target="_blank" class="logo-item" title="FHP Logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FHP_logo.svg" alt="FHP Logo">
-          </a>
-          <div class="logo-description">
-            <h2>FHP Logo</h2>
-            <p>
-              The logo of Fachhochschule Potsdam (FHP) is a clean, minimalist design featuring bold letters. Its simplicity reflects the university's focus on innovation and clarity, making it an excellent example of SVG usage in modern branding.
-            </p>
-          </div>
-        </div>
-      
-        <!-- Logo 2 -->
-        <div class="logo-section">
-          <a href="https://www.apple.com" target="_blank" class="logo-item" title="Apple Logo">
-            <!-- Apple Logo SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="black" width="100" height="100">
-              <path d="M808.4 534.4c-4.6-110.8 90.4-163.8 94.6-166.2-51.8-75.8-132.6-86.2-161.2-87.4-68.4-6.8-133.8 40.4-168.4 40.4-34.8 0-87.8-39.4-144-38.4-74.2 1-142.6 43.2-180.6 109.8-77 133.4-19.6 331.4 55.4 440.2 36.8 53.2 80.4 112.8 137 110.6 55.4-2.2 76.4-35.8 143.2-35.8s85.2 35.8 144 34.8c58.4-1 95.4-54.2 131.6-107.6 41.4-60.4 58.4-118.8 59.4-121.8-1.4-0.6-113.8-43.8-115.4-173zM688.2 158.2c30.6-37.4 51.4-89.6 45.8-141.2-44.4 1.8-98.4 29.6-130.6 67.4-28.6 33-54 85.8-47 136 49.8 3.8 100.8-25 131.8-62.2z"/>
-            </svg>      
-          </a>
-          <div class="logo-description">
-            <h2>Apple Logo</h2>
-            <p>
-              The iconic Apple logo is a symbol of simplicity and elegance. Its clean, recognizable design highlights the brand's commitment to user-friendly, innovative technology. This SVG version ensures sharpness and scalability across digital platforms.
-            </p>
-          </div>
-        </div>
-      
-      
-        <!-- Logo 3 -->
-        <div class="logo-section">
-          <a href="https://www.github.com" target="_blank" class="logo-item" title="GitHub Logo">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black">
-              <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.66-.22.66-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.52 9.52 0 0 1 12 6.8c.85.004 1.71.115 2.51.337.91-.75 2.05-1.337 3.3-1.337.55 1.37.21 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.16.58.68.49A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>
-            </svg>
-          </a>
-          <div class="logo-description">
-            <h2>GitHub Logo</h2>
-            <p>
-              Representing the open-source community, the GitHub logo features the "Octocat," a playful and unique design. This SVG version ensures adaptability for various platforms, reflecting the flexibility and creativity of the GitHub ecosystem.
-            </p>
-          </div>
-        </div>
-  </section>
+    </style>
+  </head>
+  <body>
+  
+  <!-- Content Section -->
+  <section class="content">
+    <!-- Intro Section -->
+    <div class="logo-section">
+      <div class="art-description">
+        <h2>What is the meaning of SVG Logos?</h2>
+        <p>
+          SVG logos are digital graphics created using mathematical equations and geometric shapes, allowing them to scale infinitely without losing quality. Unlike JPEG or PNG, they are lightweight, support transparency, and can be easily animated or styled with CSS, making them perfect for responsive web design and modern branding.      </p>
+      </div>
+    </div>
+  
+    <!-- Logo 1 -->
+    <div class="logo-section">
+      <a href="https://www.fh-potsdam.de/" target="_blank" class="logo-item" title="FHP Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FHP_logo.svg" alt="FHP Logo">
+      </a>
+      <div class="logo-description">
+        <h2>FHP Logo</h2>
+        <p>
+          The logo of Fachhochschule Potsdam (FHP) is a clean, minimalist design featuring bold letters. Its simplicity reflects the university's focus on innovation and clarity, making it an excellent example of SVG usage in modern branding.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Logo 2 -->
+    <div class="logo-section">
+      <a href="https://www.apple.com" target="_blank" class="logo-item" title="Apple Logo">
+        <!-- Apple Logo SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="black" width="100" height="100">
+          <path d="M808.4 534.4c-4.6-110.8 90.4-163.8 94.6-166.2-51.8-75.8-132.6-86.2-161.2-87.4-68.4-6.8-133.8 40.4-168.4 40.4-34.8 0-87.8-39.4-144-38.4-74.2 1-142.6 43.2-180.6 109.8-77 133.4-19.6 331.4 55.4 440.2 36.8 53.2 80.4 112.8 137 110.6 55.4-2.2 76.4-35.8 143.2-35.8s85.2 35.8 144 34.8c58.4-1 95.4-54.2 131.6-107.6 41.4-60.4 58.4-118.8 59.4-121.8-1.4-0.6-113.8-43.8-115.4-173zM688.2 158.2c30.6-37.4 51.4-89.6 45.8-141.2-44.4 1.8-98.4 29.6-130.6 67.4-28.6 33-54 85.8-47 136 49.8 3.8 100.8-25 131.8-62.2z"/>
+        </svg>      
+      </a>
+      <div class="logo-description">
+        <h2>Apple Logo</h2>
+        <p>
+          The iconic Apple logo is a symbol of simplicity and elegance. Its clean, recognizable design highlights the brand's commitment to user-friendly, innovative technology. This SVG version ensures sharpness and scalability across digital platforms.
+        </p>
+      </div>
+    </div>
+  
+  
+    <!-- Logo 3 -->
+    <div class="logo-section">
+      <a href="https://www.github.com" target="_blank" class="logo-item" title="GitHub Logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.66-.22.66-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.52 9.52 0 0 1 12 6.8c.85.004 1.71.115 2.51.337.91-.75 2.05-1.337 3.3-1.337.55 1.37.21 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.16.58.68.49A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>
+        </svg>
+      </a>
+      <div class="logo-description">
+        <h2>GitHub Logo</h2>
+        <p>
+          Representing the open-source community, the GitHub logo features the "Octocat," a playful and unique design. This SVG version ensures adaptability for various platforms, reflecting the flexibility and creativity of the GitHub ecosystem.
+        </p>
+      </div>
+    </div>
+</section>
 
   <!-- Section 3 -->
   <section id="SVG_Artworks">
@@ -695,203 +703,6 @@
         });
         
 </script> 
-  </section>
-
-  <!-- Section 4 -->
-  <section id="Try_It_Yourself!">
-      <h1>Try It Yourself!</h1>
-      <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Playfair Display', serif;
-            background-color: #fdfdfd;
-            color: #333;
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 150px;
-            background-color: #f4f4f4;
-            border-right: 1px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            box-sizing: border-box;
-        }
-    
-        .color-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin: 10px;
-            cursor: pointer;
-            border: 2px solid #ccc;
-        }
-    
-        .color-button.selected {
-            border: 4px solid black;
-        }
-    
-        .reset-button {
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: #003975;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-    
-        .reset-button:hover {
-            background-color: #002144;
-        }
-    
-        .main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-    
-        svg {
-            flex: 1;
-            width: 100%;
-            height: 100%;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-        }
-    
-        circle {
-            fill: #007BFF;
-            cursor: pointer;
-        }
-    </style>
-    </head>
-    <body>
-    
-    <div class="sidebar">
-        <div class="color-button" style="background-color: rgba(0, 123, 255, 0.5);" data-color="rgba(0, 123, 255, 0.5)"></div>
-        <div class="color-button" style="background-color: rgba(255, 0, 0, 0.5);" data-color="rgba(255, 0, 0, 0.5)"></div>
-        <div class="color-button" style="background-color: rgba(0, 255, 0, 0.5);" data-color="rgba(0, 255, 0, 0.5)"></div>
-        <div class="color-button" style="background-color: rgba(255, 255, 0, 0.5);" data-color="rgba(255, 255, 0, 0.5)"></div>
-        <div class="color-button" style="background-color: rgba(128, 0, 128, 0.5);" data-color="rgba(128, 0, 128, 0.5)"></div>
-        <button class="reset-button">Reset</button>
-    </div>
-    
-    <div class="main">
-        <svg xmlns="http://www.w3.org/2000/svg"></svg>
-    </div>
-    
-    <script>
-        const svg = document.querySelector('svg');
-        const colorButtons = document.querySelectorAll('.color-button');
-        const resetButton = document.querySelector('.reset-button');
-        let points = [];
-        let currentPath = null;
-        const pointRadius = 5;
-        let firstPointElement = null;
-        let currentColor = 'rgba(0, 123, 255, 0.5)'; // Default color
-    
-        // Add event listener to color buttons
-        colorButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove "selected" class from all buttons
-                colorButtons.forEach(btn => btn.classList.remove('selected'));
-                // Add "selected" class to the clicked button
-                button.classList.add('selected');
-                // Update current color
-                currentColor = button.getAttribute('data-color');
-            });
-        });
-    
-        // Function to create a new path
-        function createPath() {
-            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('d', ''); // Path data
-            path.setAttribute('stroke', currentColor); // Stroke is the current color
-            path.setAttribute('stroke-width', '2');
-            path.setAttribute('fill', 'none'); // No fill initially
-            svg.appendChild(path);
-            return path;
-        }
-    
-        // Add click event listener to draw points and paths
-        svg.addEventListener('click', (event) => {
-            // Ignore clicks on the first point to handle its click separately
-            if (event.target.tagName === 'circle') return;
-    
-            // Get the bounding box of the SVG element
-            const rect = svg.getBoundingClientRect();
-            const x = event.clientX - rect.left; // Adjust X coordinate
-            const y = event.clientY - rect.top;  // Adjust Y coordinate
-    
-            // For the first click, add a circle and start the path
-            if (points.length === 0) {
-                firstPointElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                firstPointElement.setAttribute('cx', x);
-                firstPointElement.setAttribute('cy', y);
-                firstPointElement.setAttribute('r', pointRadius);
-                svg.appendChild(firstPointElement);
-    
-                // Add a click event listener to the first point
-                firstPointElement.addEventListener('click', closePath);
-            }
-    
-            // Add the point to the points array
-            points.push({ x, y });
-    
-            // Draw or update the path
-            if (!currentPath) {
-                currentPath = createPath();
-            }
-            updatePath();
-        });
-    
-        // Function to close the path
-        function closePath() {
-            if (!currentPath || points.length < 2) return;
-    
-            // Explicitly connect back to the first point
-            const firstX = points[0].x;
-            const firstY = points[0].y;
-            const d = currentPath.getAttribute('d') + ` L${firstX},${firstY} Z`;
-            currentPath.setAttribute('d', d);
-    
-            // Add the selected fill color when the path is closed
-            currentPath.setAttribute('fill', currentColor);
-            currentPath.setAttribute('stroke', currentColor); // Stroke matches fill color
-    
-            // Reset for the next path
-            points = [];
-            currentPath = null;
-            firstPointElement = null;
-        }
-    
-        // Function to update the path's "d" attribute
-        function updatePath() {
-            if (points.length === 0) return;
-            const d = points.map((point, index) => 
-                index === 0 
-                    ? `M${point.x},${point.y}` // Move to the first point
-                    : `L${point.x},${point.y}` // Draw line to subsequent points
-            ).join(' ');
-            currentPath.setAttribute('d', d);
-        }
-    
-        // Reset button event listener
-        resetButton.addEventListener('click', () => {
-            // Clear all elements in the SVG
-            svg.innerHTML = '';
-            // Reset variables
-            points = [];
-            currentPath = null;
-            firstPointElement = null;
-        });
-    </script>  
-  </section>
 
   <!-- Footer -->
   <footer>
